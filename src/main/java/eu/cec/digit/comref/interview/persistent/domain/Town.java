@@ -11,8 +11,8 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
 @Entity
 @Table(name = "TOWN")
 public class Town implements Serializable {
@@ -29,4 +29,40 @@ public class Town implements Serializable {
 	@JoinColumn(name = "ISP_NAME", referencedColumnName = "SPEED")
 	private InternetServiceProvider internetServiceProvider;
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getInhabitants() {
+		return inhabitants;
+	}
+
+	public void setInhabitants(Integer value) {
+		this.inhabitants = value;
+	}
+
+	public InternetServiceProvider getInternetServiceProvider() {
+		return internetServiceProvider;
+	}
+
+	public void setInternetServiceProvider(InternetServiceProvider value) {
+		this.internetServiceProvider = value;
+	}
+	/*
+	public Boolean getAvailable() {
+//		return true;
+		if (this.available.equals(1))
+			return true;
+		else
+			return false;
+		
+	}
+		
+	}
+*/
+	
 }

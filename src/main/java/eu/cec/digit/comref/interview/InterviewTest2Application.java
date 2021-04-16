@@ -2,6 +2,8 @@ package eu.cec.digit.comref.interview;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -22,6 +24,8 @@ public class InterviewTest2Application implements CommandLineRunner {
 
 	@Autowired
 	private InternetServiceProviderRepository internetServiceProviderRepository;
+
+	private static final Logger log = LoggerFactory.getLogger(InterviewTest2Application.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(InterviewTest2Application.class, args);

@@ -1,6 +1,7 @@
 package eu.cec.digit.comref.interview.persistent.domain;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,4 +30,28 @@ public class InternetServiceProvider implements Serializable {
 	@Column(name = "AVAILABLE")
 	private Boolean available;
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(Integer value) {
+		this.speed = value;
+	}
+
+	public Boolean getAvailable() {
+			return this.available;
+		
+	}
+	public void setAvailable(Boolean available) {
+			this.available = available;
+
+	}
 }
