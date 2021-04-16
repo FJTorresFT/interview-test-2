@@ -1,5 +1,6 @@
 package eu.cec.digit.comref.interview;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -64,13 +65,15 @@ public class InterviewTest2Application implements CommandLineRunner {
 
 	public Town getTown(String name) {
 
-		return townRepository.findById(Integer.getInteger(name)).orElse(null);
+//		return townRepository.findById(Integer.getInteger(name)).orElse(null);
+		return townRepository.findById(name).orElse(null);
 
 	}
 
 	public void deleteTown(String name) {
 
-		townRepository.deleteById(Integer.getInteger(name));
+//		townRepository.deleteById(Integer.getInteger(name));
+		townRepository.deleteById(name);
 
 	}
 
@@ -120,7 +123,19 @@ public class InterviewTest2Application implements CommandLineRunner {
 
 	public List<InternetServiceProvider> getAvailableInternetServiceProviders() {
 		
-		return internetServiceProviderRepository.findAll();
+		List<InternetServiceProvider> internetServiceProviders = new ArrayList<InternetServiceProvider>();
+		List<InternetServiceProvider> internetServiceProvidersTemp = internetServiceProviderRepository.findAll();
+		
+		for(InternetServiceProvider internetServiceProvider : internetServiceProvidersTemp) {
+			
+			if(internetServiceProvider.getAvailable()) {
+				internetServiceProviders.add(internetServiceProvider);
+			}
+
+		}
+		return internetServiceProviders;
+
 	}
+	
 
 }

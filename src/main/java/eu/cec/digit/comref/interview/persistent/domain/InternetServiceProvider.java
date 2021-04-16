@@ -29,7 +29,7 @@ public class InternetServiceProvider implements Serializable {
 
 	@Column(name = "AVAILABLE")
 	private Boolean available;
-
+/*
 	public String getName() {
 		return name;
 	}
@@ -54,4 +54,5 @@ public class InternetServiceProvider implements Serializable {
 			this.available = available;
 
 	}
-}
+*/
+	}

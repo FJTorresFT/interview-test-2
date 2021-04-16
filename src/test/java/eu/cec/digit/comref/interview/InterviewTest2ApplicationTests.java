@@ -43,9 +43,13 @@ class InterviewTest2ApplicationTests {
 	@Test
 	public void testBasicInternetServiceProviderCrud() {
 
-		interviewTest2Application.addInternetServiceProvider("post", 1000, true);
+/*		interviewTest2Application.addInternetServiceProvider("post", 1000, true);
 		interviewTest2Application.addInternetServiceProvider("eltrona", 100, false);
 		interviewTest2Application.addInternetServiceProvider("luxonline", 10, true);
+*/
+		interviewTest2Application.addInternetServiceProvider("eltrona", 100, false);
+		interviewTest2Application.addInternetServiceProvider("luxonline", 10, true);
+		interviewTest2Application.addInternetServiceProvider("post", 1000, true);
 
 		InternetServiceProvider internetServiceProvider = interviewTest2Application.getInternetServiceProvider("post");
 		assertNotNull(internetServiceProvider);
@@ -94,7 +98,7 @@ class InterviewTest2ApplicationTests {
 	public void testIspTownRelation() {
 
 		testBasicInternetServiceProviderCrud();
-
+		
 		InternetServiceProvider internetServiceProvider = interviewTest2Application.getInternetServiceProvider("post");
 		interviewTest2Application.addTown("Luxembourg", 114303, internetServiceProvider);
 
